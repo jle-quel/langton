@@ -24,7 +24,7 @@ func	help(argv []string) error {
 	fmt.Println("\t-l\tnumber of step until the simulation finish")
 	fmt.Println()
 
-	fmt.Println("If no argv is given, the default value are [speed: 64] [limit: 1000]") 
+	fmt.Println("If no argv is given, the default value are [speed: 128] [limit: 10000]") 
 	os.Exit(0)
 
 	return nil
@@ -89,7 +89,7 @@ func	(self *Environ) Get() error {
 									 {"help", help},
 	}
 
-	(*self).Limit = 1000
+	(*self).Limit = 10000
 	(*self).Speed = 128
 	length = len(os.Args)
 

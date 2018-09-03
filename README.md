@@ -14,7 +14,7 @@ The options are:
 	-s	number of step by millisecond done by the ant(s)
 	-l	number of step until the simulation finish
 
-If no argv is given, the default value are [speed: 64] [limit: 1000]
+If no argv is given, the default value are [speed: 128] [limit: 10000]
 ```
 
 ## Installation

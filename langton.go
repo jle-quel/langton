@@ -51,8 +51,8 @@ func	(self *Ant) Get(matrix [][]uint8) {
 
 	size = len(matrix)
 
-	(*self).X = rand.Int() % size 
-	(*self).Y = rand.Int() % size 
+	(*self).X = size / 2
+	(*self).Y = size  / 2
 	(*self).Direction = uint8(rand.Int() % 3)
 }
 

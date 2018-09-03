@@ -36,6 +36,6 @@ func	handle_window(default_width int, default_height int) {
 		if width < default_width || height < default_height {
 			_exit("")
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(2 * time.Second)
 	}
 }
