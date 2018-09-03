@@ -11,7 +11,7 @@ Usage:
 
 The options are:
 
-	-s	number of step by millisecond done by the ant(s)
+	-s	number of step by millisecond done by the ant
 	-l	number of step until the simulation finish
 
 If no argv is given, the default value are [speed: 64] [limit: 1000]
