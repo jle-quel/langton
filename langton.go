@@ -69,8 +69,8 @@ func	langton(width int, height int, environ Environ) {
 	goterm.Clear()
 	
 	for index := 0; index < environ.Limit; index += 1 {
-		flag(index, environ, width, height)
-		display(ant, matrix, width, height)
+		print_flag(index, environ, width, height)
+		print_matrix(ant, matrix, width, height)
 		ant.Simulate(matrix)
 		goterm.Flush()
 		time.Sleep(time.Duration(environ.Speed) * time.Millisecond)

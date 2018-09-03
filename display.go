@@ -6,13 +6,13 @@ import "github.com/buger/goterm"
 /// STATIC FUNCTIONS
 ////////////////////////////////////////////////////////////////////////////////
 
-func	(self *Ant) Draw(matrix [][]uint8, x int, y int) {
-	if (*self).X == x && (*self).Y == y {
-		goterm.Printf("🐜")
+func	print_block(ant Ant, matrix [][]uint8, x int, y int) {
+	if ant.X == x && ant.Y == y {
+		goterm.Printf("%s", goterm.Color("*", goterm.RED))
 	} else if matrix[y][x] == 0 {
-		goterm.Printf("◻️")
+		goterm.Printf("%s", goterm.Color(".", goterm.WHITE))
 	} else {
-		goterm.Printf("◼️")
+		goterm.Printf("%s", goterm.Color(".", goterm.BLACK))
 	}
 }
 
@@ -20,7 +20,7 @@ func	(self *Ant) Draw(matrix [][]uint8, x int, y int) {
 /// PUBLIC FUNCTION
 ////////////////////////////////////////////////////////////////////////////////
 
-func	flag(index int, environ Environ, width int, height int) {
+func	print_flag(index int, environ Environ, width int, height int) {
 	var title	string
 	var x		int
 	var y		int
@@ -36,7 +36,7 @@ func	flag(index int, environ Environ, width int, height int) {
 	goterm.Printf("%s", title)
 }
 
-func	display(ant Ant, matrix [][]uint8, width int, height int) {
+func	print_matrix(ant Ant, matrix [][]uint8, width int, height int) {
 	var length	int
 	var pos_x	int
 	var pos_y	int
@@ -48,7 +48,7 @@ func	display(ant Ant, matrix [][]uint8, width int, height int) {
 		pos_x = (width / 2) - (length / 1)
 		for x, _ := range matrix[y] {
 			goterm.MoveCursor(pos_x, pos_y)
-			ant.Draw(matrix, x, y)
+			print_block(ant, matrix, x, y)
 			pos_x += 2
 		}
 		pos_y += 1
