@@ -22,8 +22,8 @@ If no argv is given, the default value are [speed: 64] [limit: 1000]
 Golang must be installed
 
 ```
-go install
-langton
+go build
+./langton
 ```
 
 ## Author
