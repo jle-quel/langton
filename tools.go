@@ -13,10 +13,8 @@ func	get_size(width int, height int) int {
 
 	size = height - (height / 8)
 
-	if size > width {
-		for size > width {
-			size -= 1
-		}
+	for size > width {
+		size -= 1
 	}
 
 	return size

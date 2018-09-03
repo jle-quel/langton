@@ -15,9 +15,11 @@ import "golang.org/x/crypto/ssh/terminal"
 ////////////////////////////////////////////////////////////////////////////////
 
 func	handle_signal() {
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt)
-	<- c
+	var channel	chan os.Signal
+
+	channel = make(chan os.Signal, 1)
+	signal.Notify(channel, os.Interrupt)
+	<- channel
 
 	_exit("")
 }
